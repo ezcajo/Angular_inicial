@@ -1,36 +1,27 @@
 /**
- * Esta variable se determina el tipo de dato que almacenara el arreglo, no recomendable
- * se debe almacenar de un solo tipo
+ * Funciones
  */
-let habilidades: (string| number)[] =["tecnica", "comprension","linguisticas"];
 
-habilidades.push(1);
-
-
-let temperaturas: number[] =[10,23,32,18];
-let sumaTotal : number = 0;
-
-for(let temperatura of temperaturas){
-  console.log(temperatura);
-  sumaTotal+=temperatura;
+function sumar(a, b){
+  return a + b;
 }
-console.log(`temperatura total: ${sumaTotal}`);
 
-/**
- * Interfaces y Objetos
- */
-interface Persona{
-  nombre:string;
-  apellido: string;
-  temperatura: number[];
-  edad: number;
-  pueblonatal?: string;
+console.log(sumar("Marcelo ", "Peralta"));
+
+function sumarNumeros(a:number, b: number): number{
+  return a + b;
 }
-const persona : Persona ={
-  nombre: "Marcelo",
-  apellido: "Peralta",
-  temperatura: temperaturas,
-  edad: 53
+
+console.log(sumarNumeros(10,15));
+
+const sumarFlecha = (a: number, b: number):number =>{
+  return a + b;
 }
-persona.pueblonatal ="San Martin"
-console.table(persona)
+
+console.log(sumarFlecha(12,13));
+
+function resta(a: number, b?:number, c: number=2): number{
+return a - c;
+}
+
+console.log(resta(10,0, 8));
