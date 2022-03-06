@@ -1,42 +1,26 @@
 /**
  * 
- * Destructuracion de Objetos
+ * Destructuracion de Arreglos
  */
+//Arreglo
+const meses: string[] = ['Enero', 'Febrero', 'Marzo', 'Abril'];
 
-interface Reproductor{
-    volumen: number;
-    segundo : number;
-    cancion: string, 
-    detalles: Detalles;
-}
+// destructuracion de lista es en base a la posicion del elemento diferente
+//con referencia al objr¡eto que lo realiza por su clave
 
-interface Detalles{
-    autor: string;
-    anio: number;
-}
+const [uno,dos,tres,cuatro] = meses;
+    //otra forma
+    //const [,,,cuatro] = meses;
 
-const reproductor: Reproductor={
-    volumen: 90,
-    segundo: 36,
-    cancion: "Angel",
-    detalles: {
-        autor: "Gary",
-        anio: 1991
-    }
-}
-//destructuracion de objetos
-const{volumen, segundo, cancion, detalles} = reproductor;
-const{autor, anio} = detalles
 
-//uso de constantes desestructurada
-document.body.innerHTML=( `<div>
-                <hr>
-                volumen: ${volumen}<br>
-                segundo: ${segundo} <br>
-                cancion: ${cancion} <br>
-                autor: ${autor}<br>
-                año:  ${anio}<br>
-                </div><br>
-                <hr>
-                                    `)
-                                    
+    //implementacion del string en el document
+document.body.innerHTML=
+`
+    <div style= "color='red'; ">
+    mes: ${uno} <br>
+    mes: ${dos} <br>
+    mes: ${tres} <br>
+    mes: ${cuatro} <br>
+    
+    </div>
+`
