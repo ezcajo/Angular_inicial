@@ -1,27 +1,30 @@
 /**
  * Funciones
  */
+//Interface del tipo Personaje
 
-function sumar(a, b){
-  return a + b;
+interface Personaje{
+nombre: string;
+apellido: string;
+vida: number;
+ mostrarVida: () => void;
+
+}
+//metodo que permite sumar puntos de vida
+function darPuntosDeVida(personaje: Personaje, vida: number): void{
+    personaje.vida +=  vida;
 }
 
-console.log(sumar("Marcelo ", "Peralta"));
-
-function sumarNumeros(a:number, b: number): number{
-  return a + b;
+//construccion de una instancia Personaje
+let per01: Personaje ={
+    nombre :'Marcelo',
+    apellido : 'Peralta',
+    vida : 50,
+    mostrarVida(){
+       console.log(this.vida);
+    }
 }
 
-console.log(sumarNumeros(10,15));
-
-const sumarFlecha = (a: number, b: number):number =>{
-  return a + b;
-}
-
-console.log(sumarFlecha(12,13));
-
-function resta(a: number, b?:number, c: number=2): number{
-return a - c;
-}
-
-console.log(resta(10,0, 8));
+//llamada del metodo
+darPuntosDeVida(per01, 100)
+per01.mostrarVida();
