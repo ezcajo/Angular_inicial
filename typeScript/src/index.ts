@@ -1,30 +1,34 @@
 /**
- * Funciones
+ * Objetos e Interfaces
+ * 
  */
-//Interface del tipo Personaje
-
-interface Personaje{
-nombre: string;
-apellido: string;
-vida: number;
- mostrarVida: () => void;
-
+ 
+//interface
+interface SuperHeroes{
+nombre:string;
+edad: number;
+direccion: Direccion; // interface de direccion
+mostrarDireccion: () => string;
 }
-//metodo que permite sumar puntos de vida
-function darPuntosDeVida(personaje: Personaje, vida: number): void{
-    personaje.vida +=  vida;
+interface Direccion{
+    calle: string;
+    pais: string;
+    ciudad: string;
 }
 
-//construccion de una instancia Personaje
-let per01: Personaje ={
-    nombre :'Marcelo',
-    apellido : 'Peralta',
-    vida : 50,
-    mostrarVida(){
-       console.log(this.vida);
+//objeto superheroe
+const heroe01: SuperHeroes = {
+    nombre: 'Marcelo',
+    edad: 53,
+    direccion: {
+        calle: 'Francia',
+        pais: 'Argentina',
+        ciudad: 'San Martin',
+    },
+    mostrarDireccion: function (): string {
+     return (`${this.nombre} ${this.direccion.calle} ${this.direccion.ciudad}`);
     }
-}
 
-//llamada del metodo
-darPuntosDeVida(per01, 100)
-per01.mostrarVida();
+}
+//impresion del metodo mostrar direccion objeto heroe01
+console.log(heroe01.mostrarDireccion());
