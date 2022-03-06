@@ -3,24 +3,40 @@
  * Destructuracion de Arreglos
  */
 //Arreglo
-const meses: string[] = ['Enero', 'Febrero', 'Marzo', 'Abril'];
+interface Articulos{
+    detalle: Descripcion;
+    precio: number;
+}
+interface Descripcion{
+    marca: string;
+    modelo: string;
+}
 
-// destructuracion de lista es en base a la posicion del elemento diferente
-//con referencia al objr¡eto que lo realiza por su clave
+const celular: Articulos={
+    detalle: {
+        marca: 'Samsung',
+        modelo: 'J4'
+    },
+    precio: 100
+}
 
-const [uno,dos,tres,cuatro] = meses;
-    //otra forma
-    //const [,,,cuatro] = meses;
+const samrthTV: Articulos={
+    detalle: {
+        marca: 'Hitachi',
+        modelo: '55TG'
+    },
+    precio: 100
+}
+const product: Articulos[] =[celular, samrthTV];
 
+function calcularIva(productos: Articulos[]): number{
+        let total=0;
+        
+        productos.forEach(({precio})=>{// desectructuracion de productos, extraigo el precio
+            total += precio;
+        })
+    return total *0.21;
+}
 
-    //implementacion del string en el document
-document.body.innerHTML=
-`
-    <div style= "color='red'; ">
-    mes: ${uno} <br>
-    mes: ${dos} <br>
-    mes: ${tres} <br>
-    mes: ${cuatro} <br>
-    
-    </div>
-`
+//Imprime el iva que devueve la funcion 
+console.log(calcularIva(product));
