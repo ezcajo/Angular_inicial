@@ -1,4 +1,6 @@
-
+/**
+ * Exportaciones - Importaciones
+ */
 /**Importamos la interface y el metodo  que se utilizara en este proyecto */
 import { Productos, mostrarDatos } from './exportacion_importacion';
 
