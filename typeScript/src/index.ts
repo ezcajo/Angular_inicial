@@ -1,18 +1,28 @@
 /**
- * Tipos genericos
- */
-
-/**
  * 
- * @param argumento la denominacion del Tipo T se refiere que estamos pasando
- * argumentos del tipo generico
- * @returns el argumento con el tipo pasado
+ * @param constructor Decoradores
+ * @returns 
  */
-function tiposDatos<T>(argumento:T){
-    return argumento;
-}
 
-let soyString =tiposDatos('Hola Mundo');
-let soyNumero =tiposDatos(248);
-let soyArreglo =tiposDatos([1,2,3]);
-let soyBooleano =tiposDatos(true);
+
+function reportableClassDecorator<T extends { new (...args: any[]): {} }>(constructor: T) {
+    return class extends constructor {
+      reportingURL = "http://www...";
+    };
+  }
+   
+  @reportableClassDecorator
+  class BugReport {
+    type = "reporte";
+    title: string;
+      reportingURL: any;
+   
+    constructor(t: string) {
+      this.title = t;
+    }
+  }
+   
+  const bug = new BugReport("Marcelo Peralta");
+  console.log(bug.title); // Prints "Needs dark mode"
+  console.log(bug.type); // Prints "report"
+  bug.reportingURL;
