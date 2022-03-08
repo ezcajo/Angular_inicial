@@ -1,22 +1,21 @@
-
-/**Importamos la interface y el metodo  que se utilizara en este proyecto */
-import { Productos, mostrarDatos } from './exportacion_importacion';
+/**
+ * 
+ * Clases Basicas
+ */
 
 
 /**
- * Construccion de una lista de Productos, se utiliza la interface 
- * Productos exportada de otro Proyecto "exportacion_importacion"
+ * La diferencia con una interface es que la interface no solo se declara los atributos 
+ * y metodos , sin implementacion
  */
-const carrito: Productos[] =[
-    {
-        nombre: "Python",
-        precio: 1245
-    },
-    {
-        nombre: "Java",
-        precio: 1350
-    }
-]
+class Persona{
+    public nombre: string;
+    public apellido: string;
+    public edad: number;
+}
 
-/** Uso del metodo Mostrar Datos con el carrito creado en este proyecto */
-mostrarDatos(carrito);
+const mar =new Persona();
+mar.apellido = "Peralta"
+
+
+console.log(mar.apellido)
