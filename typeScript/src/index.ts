@@ -1,42 +1,22 @@
+
+/**Importamos la interface y el metodo  que se utilizara en este proyecto */
+import { Productos, mostrarDatos } from './exportacion_importacion';
+
+
 /**
- * 
- * Destructuracion de Arreglos
+ * Construccion de una lista de Productos, se utiliza la interface 
+ * Productos exportada de otro Proyecto "exportacion_importacion"
  */
-//Arreglo
-interface Articulos{
-    detalle: Descripcion;
-    precio: number;
-}
-interface Descripcion{
-    marca: string;
-    modelo: string;
-}
-
-const celular: Articulos={
-    detalle: {
-        marca: 'Samsung',
-        modelo: 'J4'
+const carrito: Productos[] =[
+    {
+        nombre: "Python",
+        precio: 1245
     },
-    precio: 100
-}
+    {
+        nombre: "Java",
+        precio: 1350
+    }
+]
 
-const samrthTV: Articulos={
-    detalle: {
-        marca: 'Hitachi',
-        modelo: '55TG'
-    },
-    precio: 100
-}
-const product: Articulos[] =[celular, samrthTV];
-
-function calcularIva(productos: Articulos[]): number{
-        let total=0;
-        
-        productos.forEach(({precio})=>{// desectructuracion de productos, extraigo el precio
-            total += precio;
-        })
-    return total *0.21;
-}
-
-//Imprime el iva que devueve la funcion 
-console.log(calcularIva(product));
+/** Uso del metodo Mostrar Datos con el carrito creado en este proyecto */
+mostrarDatos(carrito);
