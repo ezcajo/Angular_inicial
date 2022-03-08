@@ -1,21 +1,21 @@
 /**
  * 
- * Clases Basicas
+ * Clases Basicas - Constructores
  */
 
-
-/**
- * La diferencia con una interface es que la interface no solo se declara los atributos 
- * y metodos , sin implementacion
- */
 class Persona{
-    public nombre: string;
-    public apellido: string;
-    public edad: number;
+ 
+    /**
+     * El metodo constructor de la maner que fue declarado me permite
+     * declarar dentro del mismo los atributos de la clase y poder tambien asignarlo
+     * cuando se construya la instancia del objeto
+     */
+constructor(
+    public nombre: string,
+    public apellido: string,
+    public edad: number
+){/*cuerpo vacio*/}
 }
 
-const mar =new Persona();
-mar.apellido = "Peralta"
-
-
+const mar =new Persona('Marcelo', 'Peralta', 53);
 console.log(mar.apellido)
